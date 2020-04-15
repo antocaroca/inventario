@@ -74,9 +74,9 @@ class Inventario(Producto):
     def buscar_top_9():
         archivo = open("inventario.txt", "r")
         cantidades = {}
-        cant = {}
+        cant_9 = {}
         headers3=["Cantidad", "Categoría", "Precio", "ID", "Nombre", "Peso"] 
-       
+    
         for linea in archivo:
             nombre, cantidad, precio, id_numerico, categoria, peso = linea.strip().split(";")
         
@@ -86,13 +86,18 @@ class Inventario(Producto):
 
         #print(tabulate(cantidades[cantidad], headers=headers3))
         for  value in cantidades.values():
-            for i in value: = []
-                if int(i[0]) < 10:
-                    cant[i] = []
-                cant[]
-                    print(i[0], i[1], i[2], i[3], i[4], i[5])
-                    #print(tabulate((i[0], i[1], i[2], i[3], i[4], i[5]), headers=headers3))
-        
+            for i in value: 
+                new_i = (i[0])
+                new_i = int(new_i)
+                if new_i < 10:
+                    cant_9[new_i] = []
+                    cant_9[new_i].append((i[0], i[1], i[2], i[3], i[4], i[5]))
+
+                    resultado = (cant_9[new_i])
+                    print()    
+                    print(tabulate(resultado, headers=headers3))
+                    print()
+                       
         archivo.close()
         
 Inventario.buscar_nombre_id_precio()
