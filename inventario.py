@@ -19,7 +19,7 @@ class Producto:
             inv.write(";" + f"{self.peso}")
         inv.close()
         
-class Inventario(Producto):
+class Inventario():
     def ingresar_datos():
         nombre = input("Ingrese nombre del producto:")
         cantidad = input("Ingrese cantidad del producto:")
@@ -73,7 +73,6 @@ class Inventario(Producto):
     def buscar_top_9():
         archivo = open("inventario.txt", "r")
         cantidades = {}
-        cant_9 = {}
         headers3=["Cantidad", "Categoría", "Precio", "ID", "Nombre", "Peso"] 
     
         for linea in archivo:
